@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG" xmlns="http://logging.apache.org/log4j/2.0/config">
+
+    <Appenders>
+        <Appender type="SYSTEM_OUT" name="Console">
+            <Layout type="" pattern="[%-5p] | %d{yyyy-MM-dd HH:mm:ss.SSS} | [%t] %c (%F:%L) - %m%n">
+
+            </Layout>
+        </Appender>
+        <Appender type="SYSTEM_OUT" name="FileApp">
+            <Layout type="mpmprofportal.log" pattern="[%-5p] | %d{yyyy-MM-dd HH:mm:ss.SSS} | [%t] %c (%F:%L) - %m%n">
+            </Layout>
+        </Appender>
+    </Appenders>
+
+	<Loggers>
+	
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+            <!-- <AppenderRef ref="FileApp"/> -->
+        </Root>
+		
+		<Logger name="org.mpmprof.portal" level="DEBUG" additivity="false">
+		    <AppenderRef ref="Console" />
+		    <!-- <appender-ref ref="FileApp" /> -->
+		</Logger>
+
+		<Logger name="org.springframework" level="DEBUG" additivity="false">
+		    <AppenderRef ref="Console" />
+		    <!-- <appender-ref ref="FileApp" /> -->
+		</Logger>
+
+		<Logger name="org.hibernate" level="DEBUG" additivity="false">
+		    <AppenderRef ref="Console" />
+		    <!-- <appender-ref ref="FileApp" /> -->
+		</Logger>
+		
+	</Loggers>
+
+</Configuration>

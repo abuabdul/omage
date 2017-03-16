@@ -1,5 +1,6 @@
 *.class
 target/
+*.log
 
 ### STS ###
 .apt_generated
