@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="loginFormCtrl">
+  <form novalidate>
+  	Username:    <input type="text" ng-model="user.username"><br><br>
+    Password:    <input type="password" ng-model="user.password"><br><br>
+    
+    <hr>
+    
+    Name:<br>
+    <input type="text" ng-model="user.name"><br>
+    Gender:<br>
+    <!-- <input type="text" ng-model="user.gender"><br> -->
+    <select ng-model="user.gender" ng-options="x for x in sex"></select> <br>
+    Date of Birth:<br>
+    <input type="text" ng-model="user.dob"><br>
+    Address:<br>
+    <input type="text" ng-model="user.address"><br>
+    Mobile:<br>
+    <input type="text" ng-model="user.mobile"><br>
+    Email:<br>
+    <input type="text" ng-model="user.email">
+    <br><br>
+    <button ng-click="register()">Register</button>
+    <button ng-click="reset()">Reset</button>
+  </form>
+  
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('loginFormCtrl', function($scope) {
+	$scope.sex = ["Male", "Female"];
+    $scope.reset = function() {
+        $scope.user = {username:"", password:"", name:"", gender:"", dob:"", address:"", mobile:"", email:""};
+    };
+    $scope.reset();
+    $scope.register = function() {
+        alert("Account created successfully!");
+    };
+});
+</script>
+
+</body>
+</html>

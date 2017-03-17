@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="uploadFormCtrl">
+  <form novalidate>
+  	Folder name:    <input type="text" ng-model="upload.folderName"><br><br>
+    Select File:    <input type="file" ng-model="upload.imgFile"><br><br>
+    
+    
+    <button ng-click="upload()">Upload</button>
+    <button ng-click="cancel()">Cancel</button>
+  </form>
+  
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('uploadFormCtrl', function($scope) {
+    $scope.cancel = function() {
+        //Redirect to home.
+    	alert("Redirecting to home..");
+    };
+    
+    $scope.upload = function() {
+        alert("File uploaded successfully!");
+    };
+});
+</script>
+
+</body>
+</html>
