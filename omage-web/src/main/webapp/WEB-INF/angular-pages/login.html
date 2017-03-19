@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script src="app.js"></script>
+<script src="loginFormCtrl.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="loginFormCtrl as loginCtrl">
+  <form name="loginForm" novalidate>
+  	Username:    <input type="text" ng-model="user.username" required><br><br>
+    Password:    <input type="password" ng-model="user.password" required><br><br>
+    
+    <button ng-click="loginCtrl.login(user)">Login</button>
+    <button ng-click="loginCtrl.reset(user)">Reset</button>
+  </form>
+  
+</div>
+
+
+</body>
+</html>
